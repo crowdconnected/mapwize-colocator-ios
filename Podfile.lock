@@ -1,0 +1,60 @@
+PODS:
+  - CCLocation (2.4.1):
+    - ReSwift (= 5.0.0)
+    - SocketRocket (= 0.4.2)
+    - SwiftProtobuf (= 1.6.0)
+    - TrueTime (= 5.0.3)
+  - IndoorLocation (1.0.4)
+  - IQKeyboardManagerSwift (6.5.4)
+  - Mapbox-iOS-SDK (5.6.0):
+    - MapboxMobileEvents (= 0.10.2)
+  - MapboxMobileEvents (0.10.2)
+  - MapwizeSDK (3.0.11):
+    - IndoorLocation (= 1.0.4)
+    - Mapbox-iOS-SDK (~> 5.0)
+    - SSZipArchive (= 2.2.2)
+  - MapwizeUI (2.0.4):
+    - MapwizeSDK (= 3.0.11)
+  - ReSwift (5.0.0)
+  - SocketRocket (0.4.2)
+  - SSZipArchive (2.2.2)
+  - SwiftProtobuf (1.6.0)
+  - TrueTime (5.0.3)
+
+DEPENDENCIES:
+  - CCLocation
+  - IQKeyboardManagerSwift
+  - MapwizeUI
+
+SPEC REPOS:
+  trunk:
+    - CCLocation
+    - IndoorLocation
+    - IQKeyboardManagerSwift
+    - Mapbox-iOS-SDK
+    - MapboxMobileEvents
+    - MapwizeSDK
+    - MapwizeUI
+    - ReSwift
+    - SocketRocket
+    - SSZipArchive
+    - SwiftProtobuf
+    - TrueTime
+
+SPEC CHECKSUMS:
+  CCLocation: 613a13014466fc31893e4f51ef121544a0fe5231
+  IndoorLocation: 9812c8c2d499ef25e6146ef90cf23f8d107213a8
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Mapbox-iOS-SDK: 913c4655bd72a200f84996caf7a755b377abc77f
+  MapboxMobileEvents: 2bc0ca2eedb627b73cf403258dce2b2fa98074a6
+  MapwizeSDK: c209abb110d98eee81dcd33e30c960d202a678f3
+  MapwizeUI: 75c657b3c111f7fdce2764e7071700b18cb00d0f
+  ReSwift: 628f1a9b3ee52e3b3ca2a644435472fd77afafe1
+  SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
+  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
+  TrueTime: b49551ffafb28a9dee04e51b226f42a416010842
+
+PODFILE CHECKSUM: 77dafd1b132e1a0a254ce1414333b39dccaf46d5
+
+COCOAPODS: 1.9.0.beta.2
