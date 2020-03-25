@@ -18,13 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         
-        // Optional
-        // For adding credentials programmatically
-        UserDefaults.standard.set("MAPWIZE_API_KEY", forKey: kMapwizeAPIKey)
-        UserDefaults.standard.set("VENUE_ID", forKey: kMapwizeVenueIDKey)
-        UserDefaults.standard.set("CLIENT_KEY", forKey: kClientKeyStorageKey)
-        UserDefaults.standard.set(0, forKey: kServerIndexStorageKey)
-        
         guard let clientKey = UserDefaults.standard.value(forKey: kClientKeyStorageKey) as? String else {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { authorized, error in }
             UIApplication.shared.registerForRemoteNotifications()
