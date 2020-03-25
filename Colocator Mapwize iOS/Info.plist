@@ -17,9 +17,27 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MGLMapboxAccessToken</key>
+	<string>7b63e66f6a5bebaea25fc5a0e276d5ec</string>
+	<key>MGLMapboxMetricsEnabledSettingShownInApp</key>
+	<true/>
+	<key>MWZMapwizeApiKey</key>
+	<string>key</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need access Bluetooth for improving location accuracy</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need to know whether Bluetooth is switched on</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We need to know your location even when the application is in background for a better experience</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need to know your location when the application is in background for a better experience</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to know your location even when you're using the app for a better experience</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We need access to your motion activities to offer a better accuracy for your indoor location</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -39,34 +57,12 @@
 			</array>
 		</dict>
 	</dict>
-    
-    <key>MGLMapboxAccessToken</key>
-    <string>7b63e66f6a5bebaea25fc5a0e276d5ec</string>
-    <key>MGLMapboxMetricsEnabledSettingShownInApp</key>
-    <true/>
-    <key>MWZMapwizeApiKey</key>
-    <string>376d94542c92f13531f7268e877ace01</string>
-
-    <key>NSBluetoothAlwaysUsageDescription</key>
-    <string>We need access Bluetooth for improving location accuracy</string>
-    <key>NSBluetoothPeripheralUsageDescription</key>
-    <string>We need to know whether Bluetooth is switched on</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>We need to know your location even when the application is in background for a better experience</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>We need to know your location when the application is in background for a better experience</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>We need to know your location even when you're using the app for a better experience</string>
-    <key>NSMotionUsageDescription</key>
-    <string>We need access to your motion activities to offer a better accuracy for your indoor location</string>
-
-    <key>UIBackgroundModes</key>
-    <array>
-        <string>location</string>
-        <string>remote-notification</string>
-        <string>fetch</string>
-    </array>
-    
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>location</string>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
