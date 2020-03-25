@@ -32,21 +32,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qk65p7mf" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ym0-j6-rBP">
-                                <rect key="frame" x="24" y="149.5" width="150" height="34"/>
+                                <rect key="frame" x="24" y="139.5" width="150" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="GHx-JA-AXs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="actionChangeAppKey:" destination="8DN-z9-9nG" eventType="editingDidEnd" id="McQ-4T-Eyb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDJ-vv-StZ">
-                                <rect key="frame" x="24" y="114" width="63" height="19.5"/>
+                                <rect key="frame" x="24" y="104" width="63" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hMc-r6-7E8">
-                                <rect key="frame" x="24" y="251" width="366" height="32"/>
+                                <rect key="frame" x="24" y="229" width="366" height="32"/>
                                 <segments>
                                     <segment title="Staging"/>
                                     <segment title="Production"/>
@@ -58,46 +61,56 @@
                                     <action selector="actionServerSC:" destination="8DN-z9-9nG" eventType="valueChanged" id="Ysv-fV-pqb"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WX2-vg-Arx">
-                                <rect key="frame" x="332" y="150.5" width="58" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Change">
-                                    <color key="titleColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionChangeClientKey:" destination="8DN-z9-9nG" eventType="touchUpInside" id="bEC-fl-Ak0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxe-6k-Q5N">
-                                <rect key="frame" x="24" y="806" width="123" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Back to the Map">
-                                    <color key="titleColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionBack:" destination="8DN-z9-9nG" eventType="touchUpInside" id="2kb-Fi-f0z"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="bAB-XL-lQx">
+                                <rect key="frame" x="12" y="811" width="390" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxe-6k-Q5N">
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="35"/>
+                                        <color key="backgroundColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="zDD-IY-ayU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                        <state key="normal" title="SWITCH MAP SETTINGS">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionBack:" destination="8DN-z9-9nG" eventType="touchUpInside" id="2kb-Fi-f0z"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crowdconnected" translatesAutoresizingMaskIntoConstraints="NO" id="iQs-Lu-acR">
+                                        <rect key="frame" x="203" y="0.0" width="187" height="35"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ggw-kr-1fO"/>
+                                </constraints>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzL-c4-jfV">
-                                <rect key="frame" x="24" y="215.5" width="48" height="19.5"/>
+                                <rect key="frame" x="24" y="193.5" width="48" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venue ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hee-gs-je5">
-                                <rect key="frame" x="24" y="362" width="66" height="19.5"/>
+                                <rect key="frame" x="24" y="417" width="66" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="API Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktr-MO-88Z">
-                                <rect key="frame" x="24" y="471.5" width="58.5" height="19.5"/>
+                                <rect key="frame" x="24" y="506.5" width="58.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qk65p7mf" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uAS-BR-KzI">
-                                <rect key="frame" x="24" y="397.5" width="265" height="34"/>
+                                <rect key="frame" x="24" y="452.5" width="265" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="lmX-VW-o1L"/>
                                 </constraints>
@@ -105,7 +118,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="qk65p7mf" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ehN-Fs-R33">
-                                <rect key="frame" x="24" y="507" width="265" height="34"/>
+                                <rect key="frame" x="24" y="542" width="265" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="W7w-Fz-YSJ"/>
                                 </constraints>
@@ -113,12 +126,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28W-tq-ilK">
-                                <rect key="frame" x="336" y="399" width="58" height="31"/>
+                                <rect key="frame" x="335" y="454" width="59" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="KoW-c6-MgI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Change">
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="UPDATE">
                                     <color key="titleColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -126,34 +139,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BNM-VQ-b3f">
-                                <rect key="frame" x="336" y="508" width="58" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Change">
+                                <rect key="frame" x="335" y="544" width="59" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="UPDATE">
                                     <color key="titleColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="actionChangeMapwizeAPI:" destination="8DN-z9-9nG" eventType="touchUpInside" id="Jgp-fC-1zJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRA-3M-lam">
-                                <rect key="frame" x="24" y="581" width="102" height="32"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                                <state key="normal" title="Get Device ID">
-                                    <color key="titleColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="actionGetDeviceID:" destination="8DN-z9-9nG" eventType="touchUpInside" id="D3X-iG-7D9"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVC-8Y-rYo">
-                                <rect key="frame" x="24" y="629" width="366" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="6sk-zU-ROn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Colocator Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PY6-Gh-R5O">
                                 <rect key="frame" x="125" y="68" width="164" height="23"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
@@ -161,8 +155,37 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mapwize Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye6-ox-Nzj">
-                                <rect key="frame" x="129" y="322" width="156" height="23"/>
+                                <rect key="frame" x="129" y="382" width="156" height="23"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2nN-R0-Z8a">
+                                <rect key="frame" x="24" y="280" width="120" height="30"/>
+                                <color key="backgroundColor" red="0.7498810279" green="0.2968086398" blue="0.74279633040000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4bJ-lV-g0H"/>
+                                    <constraint firstAttribute="height" constant="30" id="Abx-NW-aOq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <state key="normal" title="GET DEVICE ID">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="actionGetDeviceID:" destination="8DN-z9-9nG" eventType="touchUpInside" id="Z2J-7J-65L"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMz-z0-1OD">
+                                <rect key="frame" x="24" y="320" width="366" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="bcO-bL-pv5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -171,44 +194,43 @@
                         <constraints>
                             <constraint firstItem="hee-gs-je5" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="0lZ-q2-ffG"/>
                             <constraint firstItem="BNM-VQ-b3f" firstAttribute="centerY" secondItem="ehN-Fs-R33" secondAttribute="centerY" id="1tK-C9-2Hf"/>
+                            <constraint firstItem="bAB-XL-lQx" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="12" id="2Zo-xz-ucV"/>
                             <constraint firstItem="28W-tq-ilK" firstAttribute="trailing" secondItem="kW3-nf-upK" secondAttribute="trailingMargin" id="4ra-wF-5b2"/>
-                            <constraint firstItem="hee-gs-je5" firstAttribute="top" secondItem="hMc-r6-7E8" secondAttribute="bottom" constant="80" id="B3G-1k-SKN"/>
                             <constraint firstItem="Ye6-ox-Nzj" firstAttribute="centerX" secondItem="kW3-nf-upK" secondAttribute="centerX" id="CcL-q3-6vL"/>
-                            <constraint firstItem="Ye6-ox-Nzj" firstAttribute="top" secondItem="hMc-r6-7E8" secondAttribute="bottom" constant="40" id="DHk-dZ-jnG"/>
-                            <constraint firstItem="EVC-8Y-rYo" firstAttribute="top" secondItem="wRA-3M-lam" secondAttribute="bottom" constant="16" id="FiF-s2-8GS"/>
-                            <constraint firstItem="wRA-3M-lam" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="Gdw-i0-VRz"/>
-                            <constraint firstItem="QDJ-vv-StZ" firstAttribute="top" secondItem="kW3-nf-upK" secondAttribute="topMargin" constant="70" id="JBg-LD-mz0"/>
+                            <constraint firstItem="LMz-z0-1OD" firstAttribute="top" secondItem="2nN-R0-Z8a" secondAttribute="bottom" constant="10" id="Ggm-VO-K3V"/>
+                            <constraint firstItem="Ye6-ox-Nzj" firstAttribute="top" secondItem="LMz-z0-1OD" secondAttribute="bottom" constant="40" id="He9-NQ-TXq"/>
+                            <constraint firstItem="QDJ-vv-StZ" firstAttribute="top" secondItem="kW3-nf-upK" secondAttribute="topMargin" constant="60" id="JBg-LD-mz0"/>
                             <constraint firstItem="Ym0-j6-rBP" firstAttribute="top" secondItem="QDJ-vv-StZ" secondAttribute="bottom" constant="16" id="KFN-XQ-dQi"/>
                             <constraint firstItem="Ym0-j6-rBP" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="LAU-By-Xdg"/>
                             <constraint firstItem="uAS-BR-KzI" firstAttribute="top" secondItem="hee-gs-je5" secondAttribute="bottom" constant="16" id="LMH-JF-Gd9"/>
+                            <constraint firstItem="cRq-EK-KFb" firstAttribute="bottom" secondItem="bAB-XL-lQx" secondAttribute="bottom" constant="16" id="LX6-Fl-si9"/>
                             <constraint firstItem="PY6-Gh-R5O" firstAttribute="centerX" secondItem="kW3-nf-upK" secondAttribute="centerX" id="O2P-Ht-zJy"/>
                             <constraint firstItem="PY6-Gh-R5O" firstAttribute="top" secondItem="cRq-EK-KFb" secondAttribute="top" constant="24" id="OQf-F6-aeT"/>
-                            <constraint firstItem="cRq-EK-KFb" firstAttribute="trailing" secondItem="EVC-8Y-rYo" secondAttribute="trailing" constant="24" id="OVT-QD-izH"/>
                             <constraint firstItem="hMc-r6-7E8" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="Qbc-2W-bcP"/>
                             <constraint firstItem="ehN-Fs-R33" firstAttribute="top" secondItem="ktr-MO-88Z" secondAttribute="bottom" constant="16" id="ShQ-E8-QfZ"/>
                             <constraint firstItem="ktr-MO-88Z" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="TD0-Wn-Eac"/>
                             <constraint firstItem="uAS-BR-KzI" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="Tvx-TH-GIJ"/>
+                            <constraint firstAttribute="trailing" secondItem="bAB-XL-lQx" secondAttribute="trailing" constant="12" id="Wk4-T3-SvQ"/>
                             <constraint firstItem="BNM-VQ-b3f" firstAttribute="trailing" secondItem="kW3-nf-upK" secondAttribute="trailingMargin" id="Wxm-h4-sSM"/>
+                            <constraint firstItem="hee-gs-je5" firstAttribute="top" secondItem="LMz-z0-1OD" secondAttribute="bottom" constant="75" id="XC8-I8-ZB1"/>
                             <constraint firstItem="QDJ-vv-StZ" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="Xw7-1U-z80"/>
-                            <constraint firstItem="EVC-8Y-rYo" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="YMC-yV-ggC"/>
-                            <constraint firstItem="wRA-3M-lam" firstAttribute="top" secondItem="ehN-Fs-R33" secondAttribute="bottom" constant="40" id="Z8c-MQ-bRs"/>
                             <constraint firstItem="cRq-EK-KFb" firstAttribute="trailing" secondItem="hMc-r6-7E8" secondAttribute="trailing" constant="24" id="ZpI-DK-vtX"/>
                             <constraint firstItem="BzL-c4-jfV" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="eXy-M1-DL2"/>
-                            <constraint firstItem="cRq-EK-KFb" firstAttribute="trailing" secondItem="WX2-vg-Arx" secondAttribute="trailing" constant="24" id="eqd-ma-O6D"/>
                             <constraint firstItem="28W-tq-ilK" firstAttribute="centerY" secondItem="uAS-BR-KzI" secondAttribute="centerY" id="euA-1z-HY9"/>
-                            <constraint firstItem="WX2-vg-Arx" firstAttribute="centerY" secondItem="Ym0-j6-rBP" secondAttribute="centerY" id="lf7-15-0dD"/>
-                            <constraint firstItem="BzL-c4-jfV" firstAttribute="top" secondItem="Ym0-j6-rBP" secondAttribute="bottom" constant="32" id="oAZ-IK-YEt"/>
+                            <constraint firstItem="2nN-R0-Z8a" firstAttribute="top" secondItem="hMc-r6-7E8" secondAttribute="bottom" constant="20" id="hhj-Lr-jJ0"/>
+                            <constraint firstItem="2nN-R0-Z8a" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="k1g-9C-kh8"/>
+                            <constraint firstItem="BzL-c4-jfV" firstAttribute="top" secondItem="Ym0-j6-rBP" secondAttribute="bottom" constant="20" id="oAZ-IK-YEt"/>
                             <constraint firstItem="hMc-r6-7E8" firstAttribute="top" secondItem="BzL-c4-jfV" secondAttribute="bottom" constant="16" id="oW7-J9-0Qx"/>
-                            <constraint firstItem="cRq-EK-KFb" firstAttribute="bottom" secondItem="lxe-6k-Q5N" secondAttribute="bottom" constant="24" id="pN8-t1-Jx3"/>
-                            <constraint firstItem="ktr-MO-88Z" firstAttribute="top" secondItem="uAS-BR-KzI" secondAttribute="bottom" constant="40" id="pvh-NI-fox"/>
+                            <constraint firstItem="ktr-MO-88Z" firstAttribute="top" secondItem="uAS-BR-KzI" secondAttribute="bottom" constant="20" id="pvh-NI-fox"/>
                             <constraint firstItem="ehN-Fs-R33" firstAttribute="leading" secondItem="QDJ-vv-StZ" secondAttribute="leading" id="t0a-V8-zR4"/>
-                            <constraint firstItem="lxe-6k-Q5N" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="uwS-ft-Xdu"/>
+                            <constraint firstItem="cRq-EK-KFb" firstAttribute="trailing" secondItem="LMz-z0-1OD" secondAttribute="trailing" constant="24" id="xcm-xL-MYn"/>
+                            <constraint firstItem="LMz-z0-1OD" firstAttribute="leading" secondItem="cRq-EK-KFb" secondAttribute="leading" constant="24" id="zpD-Q2-h0X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cRq-EK-KFb"/>
                     </view>
                     <connections>
                         <outlet property="clientKeyTF" destination="Ym0-j6-rBP" id="M46-uf-h8V"/>
-                        <outlet property="deviceIDLabel" destination="EVC-8Y-rYo" id="a1e-ZF-btT"/>
+                        <outlet property="deviceIDLabel" destination="LMz-z0-1OD" id="0dv-2I-bph"/>
                         <outlet property="mapwizeAPITF" destination="ehN-Fs-R33" id="cZr-sm-T5h"/>
                         <outlet property="mapwizeVenueTF" destination="uAS-BR-KzI" id="f89-w6-6dP"/>
                         <outlet property="serverSC" destination="hMc-r6-7E8" id="Jct-Eh-RXr"/>
@@ -216,7 +238,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JuP-44-e1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948" y="86"/>
+            <point key="canvasLocation" x="947.82608695652186" y="85.714285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crowdconnected" width="700" height="191"/>
+    </resources>
 </document>

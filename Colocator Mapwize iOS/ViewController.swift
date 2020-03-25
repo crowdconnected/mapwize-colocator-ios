@@ -119,8 +119,8 @@ class ViewController: UIViewController {
     
     private func addSettingsButton() {
         let settingsButton = UIButton(frame: CGRect(x: 200, y: 20, width: 150, height: 40))
-        settingsButton.setTitle("Settings", for: .normal)
-        settingsButton.titleLabel?.font = UIFont.init(name: "HelveticaNeue-Medium", size: 19)
+        settingsButton.setTitle("SETTINGS", for: .normal)
+        settingsButton.titleLabel?.font = UIFont.init(name: "HelveticaNeue-Medium", size: 16)
         settingsButton.tintColor = .clear
         settingsButton.setTitleColor(.purple, for: .normal)
         settingsButton.addTarget(self, action: #selector(actionSettings), for: .touchUpInside)

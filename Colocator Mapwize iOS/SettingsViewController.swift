@@ -82,13 +82,12 @@ class SettingsViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func actionChangeClientKey(_ sender: Any) {
-        if clientKeyTF.text?.count != 8 {
-            showAlert(message: "The App Key seems incorrect")
+    @IBAction func actionChangeAppKey(_ sender: UITextField) {
+        if sender.text?.count != 8 {
             return
         }
         
-        UserDefaults.standard.set(clientKeyTF.text!, forKey: kClientKeyStorageKey)
+        UserDefaults.standard.set(sender.text!, forKey: kClientKeyStorageKey)
         reconnectCCLocation()
     }
     

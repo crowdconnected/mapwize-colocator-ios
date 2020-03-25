@@ -5,8 +5,8 @@ target 'Colocator Mapwize iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'MapwizeUI'
-pod 'CCLocation'
+  pod 'MapwizeUI', '~> 2.0.4'
+pod 'CCLocation', '~> 2.5.2'
 pod 'IQKeyboardManagerSwift'
 
 end
